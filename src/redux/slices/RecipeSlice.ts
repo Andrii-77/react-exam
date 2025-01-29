@@ -1,6 +1,7 @@
 import {IRecipe} from "../../models/IRecipe.ts";
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {getAll} from "../../services/api.service.ts";
+import {IRecipeResponseModel} from "../../models/IRecipeResponseModel.ts";
 
 type RecipeSliceType = {
     recipes: IRecipe[]
@@ -10,7 +11,7 @@ const initRecipeSliceState: RecipeSliceType = {recipes: []};
 
 const loadRecipes = createAsyncThunk("loadRecipes", async (_, thunkAPI) => {
     try {
-        const recipes = await getAll<IRecipe[]>('/recipes');
+        const {recipes} = await getAll<IRecipeResponseModel>('/recipes');
         console.log(recipes);
         return thunkAPI.fulfillWithValue(recipes);
         // throw new Error();

@@ -5,6 +5,7 @@ export const MainLayout = () => {
     return (
         <>
             <MenuComponent/>
+            <br/>
             <hr/>
             <Outlet/>
         </>

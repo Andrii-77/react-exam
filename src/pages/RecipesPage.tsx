@@ -3,7 +3,6 @@ import {RecipesComponent} from "../components/recipes-component/RecipesComponent
 export const RecipesPage = () => {
     return (
         <>
-            RecipesPage
             <RecipesComponent/>
         </>
     );
