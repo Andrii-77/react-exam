@@ -4,8 +4,6 @@ import {useEffect,} from "react";
 import {userActions} from "../../redux/slices/UserSlice.ts";
 import {IUser} from "../../models/IUser.ts";
 import {UserComponent} from "../user-component/UserComponent.tsx";
-// import {getAllForPagination} from "../../services/api.service.ts";
-// import {IUserResponseModel} from "../../models/IUserResponseModel.ts";
 import {useSearchParams} from "react-router";
 
 // export const UsersComponent = () => {

@@ -17,7 +17,7 @@ export const SingleRecipeDetailsComponent = () => {
             <div>Calories Per Serving: {recipe.caloriesPerServing}</div>
             <div>Rating: {recipe.rating}</div>
             <hr/>
-            <Link to={''} state={recipe.userId}>{recipe.userId}</Link>
+            <Link to={''}>{recipe.userId}</Link>
         </div>
     );
 };

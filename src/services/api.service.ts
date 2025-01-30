@@ -8,7 +8,6 @@ const baseUrl = import.meta.env.VITE_BASE_URL;
 type LoginData = {
     username: string;
     password: string;
-    expiresInMins: number
 }
 
 const axiosInstance = axios.create({
@@ -45,9 +44,9 @@ axiosInstance.interceptors.request.use((requestObject) => {
 })
 
 
-export const login = async ({username, password, expiresInMins}: LoginData): Promise<IUserWithTokens> => {
+export const login = async ({username, password}: LoginData): Promise<IUserWithTokens> => {
 
-    const {data: userWithTokens} = await axiosInstance.post<IUserWithTokens>('/login', {username, password, expiresInMins});
+    const {data: userWithTokens} = await axiosInstance.post<IUserWithTokens>('/login', {username, password});
     console.log(userWithTokens);
     localStorage.setItem('user', JSON.stringify(userWithTokens));
     return userWithTokens;

@@ -21,6 +21,7 @@ export const UserComponent: FC<UserTypeProps> = ({user}) => {
     // const handleOnClick = () => {
     //     navigate('details', {state: user})
     // }
+
     return (
         <div>
             <Link to={'details'} state={user}>{user.id}). {user.lastName} {user.firstName}</Link>
