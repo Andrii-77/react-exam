@@ -24,6 +24,7 @@ export const RecipeComponent: FC<RecipeTypeProps> = ({recipe}) => {
     return (
         <div>
             <Link to={'details'} state={recipe}>{recipe.name}</Link>
+            <Link to={''} state={recipe}>{recipe.tags.map((tag, index) => <div key={index}>{tag}</div>)}</Link>
 
             {/*<button onClick={handleOnClick}>go to details</button>*/}
         </div>

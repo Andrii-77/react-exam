@@ -12,7 +12,7 @@ const initRecipeSliceState: RecipeSliceType = {recipes: []};
 const loadRecipes = createAsyncThunk("loadRecipes", async (_, thunkAPI) => {
     try {
         const {recipes} = await getAll<IRecipeResponseModel>('/recipes');
-        console.log(recipes);
+        // console.log(recipes);
         return thunkAPI.fulfillWithValue(recipes);
         // throw new Error();
     } catch (e) {

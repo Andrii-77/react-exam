@@ -15,3 +15,11 @@ export const routes = createBrowserRouter([
         ]
     }
 ]);
+
+// {path: '/', element: <MainLayout/>, children: [
+//     {index: true, element: <HomePage/>},
+//     {path: 'login', element: <LoginPage/>},
+//     {path: '/auth/resources', element: <AuthResourcesPage/>},
+// ]
+// }
+// ]);

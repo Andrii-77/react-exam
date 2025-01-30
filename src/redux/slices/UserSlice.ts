@@ -10,10 +10,13 @@ type UserSliceType = {
 const initUserSliceState: UserSliceType = {users: []};
 
 const loadUsers = createAsyncThunk("loadUsers", async (_, thunkAPI) => {
+    // const [searchParams] = useSearchParams({page: "1"});
+    // const currentPage = searchParams.get('page') || '1';
     try {
         // const users = await getAll<IUser[]>('/users');
+
         const {users} = await getAll<IUserResponseModel>('/users');
-        console.log(users);
+        // console.log(users);
         return thunkAPI.fulfillWithValue(users);
         // throw new Error();
     } catch (e) {
