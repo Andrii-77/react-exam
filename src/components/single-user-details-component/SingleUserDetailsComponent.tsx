@@ -6,6 +6,7 @@ import {useEffect} from "react";
 import {recipeActions} from "../../redux/slices/RecipeSlice.ts";
 // import {IRecipe} from "../../models/IRecipe.ts";
 
+
 export const SingleUserDetailsComponent = () => {
     const {state} = useLocation();
     const user = state as IUser;
@@ -31,7 +32,6 @@ export const SingleUserDetailsComponent = () => {
                 <div>Eye Color: {user.eyeColor}</div>
             </div>
             <hr/>
-
         </div>
     );
 };

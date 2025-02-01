@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 export const SingleRecipeDetailsComponent = () => {
     const {state} = useLocation();
     const recipe = state as IRecipe;
+
     return (
         <div>
             <div>Name: {recipe.name}</div>
@@ -17,7 +18,7 @@ export const SingleRecipeDetailsComponent = () => {
             <div>Calories Per Serving: {recipe.caloriesPerServing}</div>
             <div>Rating: {recipe.rating}</div>
             <hr/>
-            <Link to={''}>{recipe.userId}</Link>
+            <Link to={`/users/details/${recipe.userId}`}>{recipe.userId}</Link>
         </div>
     );
 };

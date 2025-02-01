@@ -13,7 +13,7 @@ export const FormComponent = () => {
         = useForm<IFormProps>({mode: 'all', resolver: joiResolver(userValidator)});
 
     const customHandler = (formDataProps: IFormProps) => {
-        console.log(formDataProps);// some stuff
+        console.log(formDataProps);// не знаю як це перекинути в логін.
     };
 
     return (

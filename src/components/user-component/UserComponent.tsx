@@ -24,7 +24,7 @@ export const UserComponent: FC<UserTypeProps> = ({user}) => {
 
     return (
         <div>
-            <Link to={'details'} state={user}>{user.id}). {user.lastName} {user.firstName}</Link>
+            <Link to={`details/${user.id}`} state={user}>{user.id}). {user.lastName} {user.firstName}</Link>
 
             {/*<button onClick={handleOnClick}>go to details</button>*/}
         </div>
