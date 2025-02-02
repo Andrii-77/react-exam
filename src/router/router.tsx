@@ -12,25 +12,18 @@ export const routes = createBrowserRouter([
             {path: '', element: <FormPage/>},
             {path: 'users', element: <UsersPage/>},
             {path: 'recipes', element: <RecipesPage/>},
-            {path: 'users/details/:id', element: <SingleUserDetailsPage/>},
-            {path: 'recipes/details', element: <SingleRecipeDetailsPage/>}
+            {path: 'users/details/:userId', element: <SingleUserDetailsPage/>},
+            {path: 'recipes/details/:recipeId', element: <SingleRecipeDetailsPage/>}
         ],
     }
 ]);
 
-// {path: '/', element: <MainLayout/>, children: [
-//     {index: true, element: <HomePage/>},
-//     {path: 'login', element: <LoginPage/>},
-//     {path: '/auth/resources', element: <AuthResourcesPage/>},
-// ]
-// }
-// ]);
-
 // {
 //     path: '/', element: <MainLayout/>, children:[
-//     {path: 'users', element: <UsersPage/>},
-//     {path: 'recipes', element: <RecipesPage/>},
-//     {path: 'users/details', element: <SingleUserDetailsPage/>},
-//     {path: 'recipes/details', element: <SingleRecipeDetailsPage/>}
+//     {path: 'auth', element: <FormPage/>},
+//     {path: 'auth/users', element: <UsersPage/>},
+//     {path: 'auth/recipes', element: <RecipesPage/>},
+//     {path: 'auth/users/details/:userId', element: <SingleUserDetailsPage/>},
+//     {path: 'auth/recipes/details/:recipeId', element: <SingleRecipeDetailsPage/>}
 // ],
 // }

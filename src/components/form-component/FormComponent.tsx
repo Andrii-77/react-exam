@@ -4,9 +4,9 @@ import {joiResolver} from "@hookform/resolvers/joi";
 
 interface IFormProps {
     username: string,
-    password: string,
-    age: number
+    password: string
 }
+
 
 export const FormComponent = () => {
     const {handleSubmit, register, formState: {errors, isValid}}

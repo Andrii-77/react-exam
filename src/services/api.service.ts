@@ -8,6 +8,7 @@ const baseUrl = import.meta.env.VITE_BASE_URL;
 type LoginData = {
     username: string;
     password: string;
+    expiresInMins: number
 }
 
 const axiosInstance = axios.create({
@@ -26,13 +27,13 @@ export const getAll = async <T> (endpoint: string) => {
     return axiosResponse.data;
 };
 
-// export const getAllForPagination = async <T, >(endpoint: string, page: string): Promise<T> => {
-//     const limit = 30;
-//     const skip = limit * (+page) - limit;
-//
-//     return await fetch(`${baseUrl}${endpoint}${skip}`).then(res => res.json());
-// }
 
+export const getAllForPagination = async <T> (endpoint: string, page: string) => {
+    const limit = 30;
+    const skip = limit * (+page) - limit;
+    const axiosResponse = await axiosInstance.get<T>(`${baseUrl}${endpoint}${skip}`);
+    return axiosResponse.data;
+};
 
 
 axiosInstance.interceptors.request.use((requestObject) => {
@@ -44,13 +45,14 @@ axiosInstance.interceptors.request.use((requestObject) => {
 })
 
 
-export const login = async ({username, password}: LoginData): Promise<IUserWithTokens> => {
+export const login = async ({username, password, expiresInMins}: LoginData): Promise<IUserWithTokens> => {
 
-    const {data: userWithTokens} = await axiosInstance.post<IUserWithTokens>('/login', {username, password});
+    const {data: userWithTokens} = await axiosInstance.post<IUserWithTokens>('/login', {username, password, expiresInMins});
     console.log(userWithTokens);
     localStorage.setItem('user', JSON.stringify(userWithTokens));
     return userWithTokens;
 }
+
 
 export const refresh = async () => {
 
